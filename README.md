@@ -1,4 +1,4 @@
-# wordpress
+# 如何在GCP谷歌雲上搭建 一鍵安裝wordpress、 註冊域名、申請數字證書、設置美觀的主題完整教程 附有商業主題免費下載喔！讓小白也能自己建網站！
 
 ## 1 註冊免費域名
 
@@ -47,6 +47,9 @@ sudo ln -sf /opt/bitnami/letsencrypt/certificates/DOMAIN.crt /opt/bitnami/nginx/
 sudo chown root:root /opt/bitnami/nginx/conf/server*
 sudo chmod 600 /opt/bitnami/nginx/conf/server*
 ```
+*替換 DOMAIN 成您的域名 有兩行要替換喔  例如： DOMAIN.key 替換成 您的域名.key* 千萬要改喔！
+
+
 
 打開所有服務
 ```
@@ -54,8 +57,8 @@ sudo /opt/bitnami/ctlscript.sh start
 ```
 #### 第四步：
 
-```
-```
+打開https://你的域名  看看是否有一個小鎖🔒
+
 
 #### 自動更新數字證書
 創建自動執行腳本
@@ -87,4 +90,15 @@ sudo crontab -e
 0 0 1 * * /opt/bitnami/letsencrypt/scripts/renew-certificate.sh 2> /dev/null
 ```
 ## 4 安裝wordpress主題
+
+商業主題網站https://themeforest.net/
+innovation主題：https://themeforest.net/item/innovation-multiconcept-news-magazine-blog-theme/14672414
+innovation主題 大方下載地址：
+
+ranbron主題：https://sites.bolvo.com/ranbron-theme/?storefront=envato-elements
+ranbron主題 大方下載地址：
+
+本教程YouTube視頻版本請移步：
+
+
 
