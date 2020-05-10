@@ -27,16 +27,64 @@ sudo mv lego /opt/bitnami/letsencrypt/lego
 ```
 sudo /opt/bitnami/ctlscript.sh stop
 ```
-#### 第三步：
+
 申請數字證書
 ```
 sudo /opt/bitnami/letsencrypt/lego --tls --email="EMAIL-ADDRESS" --domains="DOMAIN" --domains="www.DOMAIN" --path="/opt/bitnami/letsencrypt" run
 ```
-*替換 EMAIL-ADDRESS 成您自己的郵箱  替換 DOMAIN 成您的域名*
+*注意：替換 EMAIL-ADDRESS 成您自己的郵箱  替換 DOMAIN 成您的域名*
 
-### 如果是 APACHE 服務器
+
+#### 第三步：
+配置服務器使用數字證書
+
 ```
-sudo /opt/bitnami/bncert-tool
+sudo mv /opt/bitnami/nginx/conf/server.crt /opt/bitnami/nginx/conf/server.crt.old
+sudo mv /opt/bitnami/nginx/conf/server.key /opt/bitnami/nginx/conf/server.key.old
+sudo mv /opt/bitnami/nginx/conf/server.csr /opt/bitnami/nginx/conf/server.csr.old
+sudo ln -sf /opt/bitnami/letsencrypt/certificates/DOMAIN.key /opt/bitnami/nginx/conf/server.key
+sudo ln -sf /opt/bitnami/letsencrypt/certificates/DOMAIN.crt /opt/bitnami/nginx/conf/server.crt
+sudo chown root:root /opt/bitnami/nginx/conf/server*
+sudo chmod 600 /opt/bitnami/nginx/conf/server*
+```
+
+打開所有服務
+```
+sudo /opt/bitnami/ctlscript.sh start
+```
+#### 第四步：
+
+```
+```
+
+#### 自動更新數字證書
+創建自動執行腳本
+```
+sudo nano /opt/bitnami/letsencrypt/scripts/renew-certificate.sh
+```
+複製內容
+```
+#!/bin/bash
+
+sudo /opt/bitnami/ctlscript.sh stop nginx
+sudo /opt/bitnami/letsencrypt/lego --tls --email="EMAIL-ADDRESS" --domains="DOMAIN" --path="/opt/bitnami/letsencrypt" renew --days 90
+sudo /opt/bitnami/ctlscript.sh start nginx
+```
+
+
+使得腳本可以執行
+
+```
+sudo chmod +x /opt/bitnami/letsencrypt/scripts/renew-certificate.sh
+```
+
+执行以下命令以打开crontab编辑器
+```
+sudo crontab -e
+```
+将以下行添加到crontab文件并保存：
+```
+0 0 1 * * /opt/bitnami/letsencrypt/scripts/renew-certificate.sh 2> /dev/null
 ```
 ## 4 安裝wordpress主題
 
