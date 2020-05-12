@@ -8,7 +8,7 @@
     
 bitnami安裝數字證書說明文檔：https://docs.bitnami.com/google/how-to/generate-install-lets-encrypt-ssl/#alternative-approach
 
-*本視頻是NGINX 服務器*
+*本視頻是NGINX 服務器*https://youtu.be/m1zeN29hyhM
 
 ### 如果是 NGINX 服務器
 #### 第一步：
@@ -100,5 +100,5 @@ ranbron主題 大方下載地址：
 
 本教程YouTube視頻版本請移步：
 
-
+https://youtu.be/m1zeN29hyhM
 
