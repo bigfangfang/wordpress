@@ -57,7 +57,7 @@ sudo /opt/bitnami/ctlscript.sh start
 ## 自動更新數字證書
 創建自動執行腳本
 ```
-sudo nano /opt/bitnami/letsencrypt/scripts/renew-certificate.sh
+sudo vi /opt/bitnami/letsencrypt/scripts/renew-certificate.sh
 ```
 複製內容
 ```
