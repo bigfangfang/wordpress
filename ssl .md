@@ -64,7 +64,8 @@ sudo nano /opt/bitnami/letsencrypt/scripts/renew-certificate.sh
 #!/bin/bash
 
 sudo /opt/bitnami/ctlscript.sh stop nginx
-sudo /opt/bitnami/letsencrypt/lego --tls --email="EMAIL-ADDRESS" --domains="DOMAIN" --path="/opt/bitnami/letsencrypt" renew --days 90
+
+sudo /opt/bitnami/letsencrypt/lego --tls --email="dafangbigfang@gmail.com" --domains="ilikeyou.gq" --domains="www.ilikeyou.gq" --path="/opt/bitnami/letsencrypt" renew --days 90
 sudo /opt/bitnami/ctlscript.sh start nginx
 ```
 
