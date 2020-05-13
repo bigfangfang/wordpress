@@ -54,7 +54,7 @@ sudo /opt/bitnami/ctlscript.sh start
 打開https://你的域名  看看是否有一個小鎖🔒
 
 
-#### 自動更新數字證書
+## 自動更新數字證書
 創建自動執行腳本
 ```
 sudo nano /opt/bitnami/letsencrypt/scripts/renew-certificate.sh
