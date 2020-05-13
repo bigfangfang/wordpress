@@ -103,9 +103,9 @@ define('WP_SITEURL', 'https://' . $_SERVER['HTTP_HOST'] . '/');
 define('WP_HOME', 'https://' . $_SERVER['HTTP_HOST'] . '/');
 ```
 #### 保存wp-config.php
- 键盘
-shift+； 
-WQ
+ 键盘输入
+##### shift+；  回车
+##### wq        回车
 
 ### 第二句重启服务：
 
