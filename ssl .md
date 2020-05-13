@@ -102,7 +102,13 @@ define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
 define('WP_SITEURL', 'https://' . $_SERVER['HTTP_HOST'] . '/');
 define('WP_HOME', 'https://' . $_SERVER['HTTP_HOST'] . '/');
 ```
-### 第二句：
+#### 保存wp-config.php
+ 键盘
+shift+； 
+WQ
+
+### 第二句重启服务：
+
 ```
 sudo /opt/bitnami/ctlscript.sh restart
 ```
